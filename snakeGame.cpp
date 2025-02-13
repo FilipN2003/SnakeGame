@@ -1,12 +1,12 @@
 #include <iostream>
 #include <conio.h>
-#include <windows.h>
+#include <windows.h> //Used for Sleep function if ran on Windows
 using namespace std;
 bool gameOver;
 const int width = 20;
 const int height = 20;
 int x, y, fruitX, fruitY, score;
-int tailX[100], tailY[100]; //Cuvamo koordinate repa
+int tailX[100], tailY[100]; //Tail coordinates
 int nTail; //Duzina repa
 enum eDirection { STOP = 0, LEFT, RIGHT, UP, DOWN };
 eDirection dir;
@@ -92,7 +92,7 @@ void Logic()
 {
 	int prevX = tailX[0];
 	int prevY = tailY[0];
-	int prev2X, prev2Y; //Prakticno tmp1 i tmp2
+	int prev2X, prev2Y; //Basically tmp1 i tmp2
 	tailX[0] = x;
 	tailY[0] = y;
 	for (int i = 1; i < nTail; i++)
